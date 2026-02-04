@@ -287,3 +287,15 @@ window.addEventListener('unhandledrejection', (e) => {
 });
 
 refreshSession();
+
+async function loadData() {
+  // ... (ton code existant)
+  const { data, error } = await query;
+
+  if (error) {
+    console.error("Erreur Supabase détaillée:", error.message, error.details);
+    alert("Erreur de chargement: " + error.message);
+    return;
+  }
+  // ...
+}
