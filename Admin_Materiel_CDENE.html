@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Suivi Matériel – CDENE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="formMateriel">
+  <form id="adminPanel" class="bloc-formulaire" style="display:block;">
+    <fieldset>
+      <legend>Admin – Suivi du Matériel</legend>
+
+      <div id="adminStatus" class="summary-empty">Déconnecté</div>
+
+      <div id="loginSection" style="margin-top:12px;">
+        <div class="two-col">
+          <div>
+            <label>Email admin</label>
+            <input type="email" id="adminEmail" placeholder="email@exemple.ca">
+          </div>
+          <div>
+            <label>Mot de passe</label>
+            <input type="password" id="adminPassword" placeholder="********">
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <button type="button" id="btnAdminLogin">Se connecter</button>
+        </div>
+      </div>
+
+      <div id="adminSection" style="display:none; margin-top:12px;">
+        <div class="two-col">
+          <div>
+            <label>Date début</label>
+            <input type="date" id="filterFrom">
+          </div>
+          <div>
+            <label>Date fin</label>
+            <input type="date" id="filterTo">
+          </div>
+        </div>
+
+        <div>
+          <label>Recherche</label>
+          <input type="text" id="filterText" placeholder="Nom, type, série, commentaire...">
+        </div>
+
+        <div class="actions-left" style="margin-top:12px;">
+          <button type="button" id="btnAdminRefresh" class="no-pdf">Rafraîchir</button>
+          <button type="button" id="btnAdminExport" class="no-pdf">Exporter CSV</button>
+          <button type="button" id="btnAdminLogout" class="no-pdf">Se déconnecter</button>
+        </div>
+
+        <div id="adminTableWrap" style="margin-top:12px;"></div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin.js"></script>
+</body>
+</html>
